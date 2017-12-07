@@ -13,12 +13,21 @@ class NoteListView extends Component {
 
   render() {
     const { isLoading, notes } = this.props;
+    console.log(notes);
     return (
       <div>
         <h1>NoteListView</h1>
         {isLoading && <p>Loading</p>}
-        {notes.map(note => {
-          return <div key={note.id}>{note.id}</div>;
+        {Object.keys(notes).map(key => {
+          const branch = notes[key];
+          if (branch.length === 1 && branch.type === 'author') {
+            return null;
+          }
+          return (
+            <div key={key}>
+              <h4>{branch.name}</h4>
+            </div>
+          );
         })}
       </div>
     );

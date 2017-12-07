@@ -9,7 +9,7 @@ function notes(state = initialState, action) {
   switch (action.type) {
     case 'REQUEST_NOTES':
       return Object.assign({}, state, { isLoading: true });
-    case 'RECEIVE_NOTES':
+    case 'ORGANIZE_NOTES':
       return Object.assign({}, state, {
         isLoading: false,
         notes: action.payload
