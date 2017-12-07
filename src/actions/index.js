@@ -49,7 +49,7 @@ export const fetchNotes = () => {
   return dispatch => {
     dispatch(requestNotes());
 
-    return fetch('notes.json')
+    return fetch('/notes.json')
       .then(
         res => res.json(),
         error => console.log('An error occurred.', error)

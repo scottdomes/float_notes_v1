@@ -10,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={NoteListView} />
         <Route path="/notes/:id" render={props => <NoteView {...props} />} />
+        <Route path="/folders/:name" render={props => <NoteListView {...props} />} />
         <Route path="/login" component={LoginView} />
       </div>
     );

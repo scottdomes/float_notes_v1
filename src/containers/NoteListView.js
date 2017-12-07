@@ -23,9 +23,17 @@ class NoteListView extends Component {
           if (branch.length === 1 && branch.type === 'author') {
             return null;
           }
+          if (branch.length === 1 && branch.type === 'work') {
+            // return note
+            return (
+              <div key={key}>
+                <a href={`/notes/${branch.notes[0].id}`}><h4>{branch.notes[0].text}</h4></a>
+              </div>
+            );
+          }
           return (
             <div key={key}>
-              <h4>{branch.name}</h4>
+              <a href={`/folders/${key}`}><h4>{branch.name}</h4></a>
             </div>
           );
         })}
