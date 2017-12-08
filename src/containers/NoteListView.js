@@ -32,16 +32,16 @@ class NoteListView extends Component {
               if (branch.length === 1 && branch.type === 'work') {
                 // return note
                 return (
-                  <Col xs="12" sm="4">
-                    <a key={key} href={`/notes/${branch.notes[0].id}`}>
+                  <Col key={key} xs="12" sm="4">
+                    <a href={`/notes/${branch.notes[0].id}`}>
                       <Note note={branch.notes[0]} />
                     </a>
                   </Col>
                 );
               }
               return (
-                <Col xs="12" sm="4">
-                  <a key={key} href={`/folders/${key}`}>
+                <Col key={key} xs="12" sm="4">
+                  <a href={`/folders/${key}`}>
                     <Folder title={branch.name} />
                   </a>
                 </Col>
