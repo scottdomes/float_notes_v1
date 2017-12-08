@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Col, Row, Container } from 'reactstrap';
+
 import { fetchNotes } from '../actions';
+import Note from './Note';
+import Folder from './Folder';
 
 class NoteListView extends Component {
   // static propTypes = {
@@ -18,25 +22,33 @@ class NoteListView extends Component {
       <div>
         <h1>NoteListView</h1>
         {isLoading && <p>Loading</p>}
-        {Object.keys(notes).map(key => {
-          const branch = notes[key];
-          if (branch.length === 1 && branch.type === 'author') {
-            return null;
-          }
-          if (branch.length === 1 && branch.type === 'work') {
-            // return note
-            return (
-              <div key={key}>
-                <a href={`/notes/${branch.notes[0].id}`}><h4>{branch.notes[0].text}</h4></a>
-              </div>
-            );
-          }
-          return (
-            <div key={key}>
-              <a href={`/folders/${key}`}><h4>{branch.name}</h4></a>
-            </div>
-          );
-        })}
+        <Container>
+          <Row>
+            {Object.keys(notes).map(key => {
+              const branch = notes[key];
+              if (branch.length === 1 && branch.type === 'author') {
+                return null;
+              }
+              if (branch.length === 1 && branch.type === 'work') {
+                // return note
+                return (
+                  <Col xs="12" sm="4">
+                    <a key={key} href={`/notes/${branch.notes[0].id}`}>
+                      <Note note={branch.notes[0]} />
+                    </a>
+                  </Col>
+                );
+              }
+              return (
+                <Col xs="12" sm="4">
+                  <a key={key} href={`/folders/${key}`}>
+                    <Folder title={branch.name} />
+                  </a>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
       </div>
     );
   }
