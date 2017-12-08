@@ -11,7 +11,7 @@ export default class Folder extends Component {
   render() {
     const { title } = this.props
     return (
-      <Card>
+      <Card className="Folder">
         <CardBody>
           <CardText>
             <div className="background-circle">
