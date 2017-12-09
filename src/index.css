@@ -21,3 +21,11 @@ body {
   position: absolute;
   width: 100%;
 }
+
+.Note:hover {
+  cursor: pointer;
+}
+
+.NoteView {
+  text-align: left;
+}
