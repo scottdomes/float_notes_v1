@@ -4,31 +4,36 @@
       "id": 1,
       "text": "All I hear is how to live longer, richer, and, of course, more laden with electronic gadgets. We are not the first generation to believe that the worst possible thing to befall us is death. But for the ancients, the worst possible outcome was not death, but a dishonorable death, or even just a regular one. For a classical hero, dying in a retirement home with a rude nurse and a network of tubes coming into and out of your nose would not be the attractive telos for a life.",
       "source_author": "Nassim Nicholas Taleb",
-      "source_work": "Antifragile"
+      "source_work": "Antifragile",
+      "labels": ["Wealth", "Life"]
     },
     {
       "id": 2,
       "text": "Likewise, happiness is best dealt with as a negative concept; the same nonlinearity applies. Modern happiness researchers (who usually look quite unhappy), often psychologists turned economists (or vice versa), do not use nonlinearities and convexity effects when they lecture us about happiness as if we knew what it was and whether that's what we should be after. Instead, they should be lecturing us about unhappiness (I speculate that just as those who lecture on happiness look unhappy, those who lecture on unhappiness would look happy); the \"pursuit of happiness\" is not equivalent to the \"avoidance of unhappiness.\" Each of us certainly knows not only what makes us unhappy (for instance, copy editors, commuting, bad odors, pain, the sight of a certain magazine in a waiting room, etc.), but what to do about it.",
       "source_author": "Nassim Nicholas Taleb",
-      "source_work": "Antifragile"
+      "source_work": "Antifragile",
+      "labels": ["Happiness", "Psychology"]
     },
     {
       "id": 3,
       "text": "But the classics have their share to offer as well: Pascal (he of the wager in Chapter 7) said that if Cleopatra's nose had been slightly shorter, the world's fate would have changed. Cleopatra had comely features dominated by a thin and elongated nose that made Julius Caesar and his successor, Marc Antony, fall for her (here the intellectual snob in me cannot resist dissenting against conventional wisdom; Plutarch claimed that it was Cleopatra's skills in conversation, rather than her good looks, that caused the maddening infatuation of the shakers and movers of her day; I truly believe it).",
       "source_author": "Nassim Nicholas Taleb",
-      "source_work": "Fooled by Randomness"
+      "source_work": "Fooled by Randomness",
+      "labels": ["Classics", "Happiness"]
     },
     {
       "id": 4,
       "text": "In time- and much to the onlooking child's delight- my castle inevitably topples to rejoin the rest of the sand on the beach. It could be said that the last grain of sand is responsible for the destruction of the entire structure. What we are witnessing here is a nonlinear effect resulting from a linear force exerted on an object. A very small additional input, here the grain of sand, caused a disproportionate result, namely the destruction of my starter Tower of Babel. Popular wisdom has integrated many such phenomena, as witnessed by such expressions as \"the straw that broke the camel's back\" or \"the drop that caused the water to spill.\"",
       "source_author": "Nassim Nicholas Taleb",
-      "source_work": "Fooled by Randomness"
+      "source_work": "Fooled by Randomness",
+      "labels": ["Happiness"]
     },
     {
       "id": 5,
       "text": "No one to my mind lets humanity down quite so much as those who study philosophy as if it were a sort of commercial skill and then proceed to live in a quite different manner from the way they tell other people to live. People prone to every fault they denounce are walking advertisements of the uselessness of their training.",
       "source_author": "Seneca",
-      "source_work": "Letters from a Stoic"
+      "source_work": "Letters from a Stoic",
+      "labels": ["Philosophy"]
     }
   ]
 }

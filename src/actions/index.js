@@ -38,6 +38,7 @@ export const organizeNotes = json => {
         name: note.source_work
       };
     }
+    organizeLabels(tree, note);
   });
   return {
     type: 'ORGANIZE_NOTES',
@@ -57,3 +58,18 @@ export const fetchNotes = () => {
       .then(json => dispatch(organizeNotes(json)));
   };
 };
+
+function organizeLabels(tree, note) {
+  note.labels.forEach(label => {
+    if (tree[snakeCase(label)]) {
+      addToExistingFolder(note, tree[snakeCase(label)]);
+    } else {
+      tree[snakeCase(label)] = {
+        notes: [note],
+        length: 1,
+        type: 'label',
+        name: label
+      };
+    }
+  });
+}
