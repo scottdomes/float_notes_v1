@@ -15,11 +15,13 @@ class NoteView extends Component {
   render() {
     const note = this.findNote();
     return (
-      <div className="NoteView container">
-        <div className="inner">
-          <p>{note.text}</p>
-          <p className="source-work">{note.source_work}</p>
-          <p className="source-author">{note.source_author}</p>
+      <div>
+        <div className="NoteView container">
+          <div className="inner">
+            <p>{note.text}</p>
+            <p className="source-work">{note.source_work}</p>
+            <p className="source-author">{note.source_author}</p>
+          </div>
         </div>
       </div>
     );

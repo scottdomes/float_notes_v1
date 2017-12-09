@@ -5,7 +5,7 @@ import { spring, AnimatedSwitch } from 'react-router-transition';
 
 import logo from './logo.svg';
 import './App.css';
-import { NoteView, NoteListView, LoginView, FolderView } from './containers';
+import { NoteView, NoteListView, LoginView, FolderView, NewNoteView } from './containers';
 import Navbar from './components/Navbar';
 import { fetchNotes } from './actions';
 
@@ -55,6 +55,7 @@ class App extends Component {
           <Route exact path="/works" component={NoteListView} />
           <Route exact path="/authors" component={NoteListView} />
           <Route exact path="/labels" component={NoteListView} />
+          <Route exact path="/notes/new" component={NewNoteView} />
           <Route
             path="/folders/:name/notes/:id"
             render={props => <NoteView {...props} />}

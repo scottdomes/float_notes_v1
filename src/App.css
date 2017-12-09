@@ -37,6 +37,10 @@ body a:hover {
   color: inherit;
 }
 
+.NewNoteView {
+  text-align: left;
+}
+
 .Note, .Folder {
   height: 265px;
   margin-bottom: 20px;
@@ -59,6 +63,11 @@ body a:hover {
   width: 60%;
   margin: 0 auto;
   padding: 20px 20px;
+}
+
+.Navbar {
+  position: relative;
+  z-index: 2;
 }
 
 .note-card-text {
