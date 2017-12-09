@@ -1,14 +1,42 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { CSSTransition } from 'react-transition-group';
+import { spring, AnimatedSwitch } from 'react-router-transition';
 
 import logo from './logo.svg';
 import './App.css';
 import { NoteView, NoteListView, LoginView, FolderView } from './containers';
 import { fetchNotes } from './actions';
 
-console.log(CSSTransition)
+function mapStyles(styles) {
+  return {
+    opacity: styles.opacity,
+    transform: `translateX(${styles.offset}px)`,
+  };
+}
+
+function glide(val) {
+  return spring(val, {
+    stiffness: 174,
+    damping: 19,
+  });
+}
+
+const pageTransitions = {
+  atEnter: {
+    offset: 200,
+    opacity: 1,
+  },
+  atLeave: {
+    offset: -100,
+    opacity: 0,
+  },
+  atActive: {
+    offset: 0,
+    opacity: 1,
+  },
+};
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchNotes();
@@ -16,29 +44,26 @@ class App extends Component {
 
   render() {
     return (
-      <Route
-        render={({ location }) => (
-          <div className="App">
-            <a href="/">Float Notes</a>
-            <Route exact path="/" component={NoteListView} />
-            <CSSTransition
-              className="fade"
-              timeout={1000}>
-              <Route
-              location={location}
-                path="/folders/:name/notes/:id"
-                render={props => <NoteView {...props} />}
-              />
-            </CSSTransition>
-            <Route
-              exact
-              path="/folders/:name"
-              render={props => <FolderView {...props} />}
-            />
-            <Route path="/login" component={LoginView} />
-          </div>
-        )}
-      />
+      <div className="App">
+        <Link to="/">Float Notes</Link>
+        <AnimatedSwitch
+          {...pageTransitions}
+        mapStyles={mapStyles}
+          className="route-wrapper">
+          <Route exact path="/" component={NoteListView} />
+
+          <Route
+            path="/folders/:name/notes/:id"
+            render={props => <NoteView {...props} />}
+          />
+          <Route
+            exact
+            path="/folders/:name"
+            render={props => <FolderView {...props} />}
+          />
+          <Route path="/login" component={LoginView} />
+        </AnimatedSwitch>
+      </div>
     );
   }
 }
@@ -51,4 +76,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Row, Container } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import Note from './Note';
 import Folder from './Folder';
@@ -24,17 +25,17 @@ class NoteListView extends Component {
                 // return note
                 return (
                   <Col key={key} xs="12" sm="4">
-                    <a href={`/folders/${key}/notes/${branch.notes[0].id}`}>
+                    <Link to={`/folders/${key}/notes/${branch.notes[0].id}`}>
                       <Note note={branch.notes[0]} />
-                    </a>
+                    </Link>
                   </Col>
                 );
               }
               return (
                 <Col key={key} xs="12" sm="4">
-                  <a href={`/folders/${key}`}>
+                  <Link to={`/folders/${key}`}>
                     <Folder title={branch.name} />
-                  </a>
+                  </Link>
                 </Col>
               );
             })}

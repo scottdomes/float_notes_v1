@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import { object } from 'prop-types'
+import { Link } from 'react-router-dom';
+
 import {
   Card,
   CardText,
@@ -23,14 +25,14 @@ export default class Note extends Component {
         <CardBody>
           <CardText className="note-card-text">
             {text}
-            <div className="text-overflow-preventer" />
+            <span className="text-overflow-preventer" />
           </CardText>
-          <a href={`/folders/${snakeCase(source_work)}`}>
+          <Link to={`/folders/${snakeCase(source_work)}`}>
             <CardTitle>{source_work}</CardTitle>
-          </a>
-          <a href={`/folders/${snakeCase(source_author)}`}>
+          </Link>
+          <Link to={`/folders/${snakeCase(source_author)}`}>
             <CardSubtitle>{source_author}</CardSubtitle>
-          </a>
+          </Link>
         </CardBody>
       </Card>
     );

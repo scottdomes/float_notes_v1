@@ -21,6 +21,7 @@ class FolderView extends Component {
 
   render() {
     const { isLoading, notes, match } = this.props;
+    console.log('here');
     return (
       <div>
         <h1>FolderView</h1>
@@ -30,9 +31,7 @@ class FolderView extends Component {
             {this.findNotes().map(note => {
               return (
                 <Col key={note.id} xs="12" sm="4">
-                  <a href={`/notes/${note.id}`}>
-                    <Note note={note} />
-                  </a>
+                  <Note note={note} />
                 </Col>
               );
             })}

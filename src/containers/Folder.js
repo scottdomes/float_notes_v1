@@ -14,9 +14,9 @@ export default class Folder extends Component {
       <Card className="Folder">
         <CardBody>
           <CardText>
-            <div className="background-circle">
+            <span className="background-circle">
               <i className="fas fa-folder"></i>
-            </div>
+            </span>
           </CardText>
           <CardTitle>{title}</CardTitle>
         </CardBody>

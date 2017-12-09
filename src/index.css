@@ -13,13 +13,11 @@ body {
     rgba(173, 217, 228, 1) 100%
   );
 }
-
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
+.route-wrapper {
+  position: relative;
 }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+.route-wrapper > div {
+  position: absolute;
+  width: 100%;
 }
