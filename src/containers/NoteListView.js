@@ -31,7 +31,7 @@ class NoteListView extends Component {
               return (
                 <Col key={key} xs="12" sm="4">
                   <Link to={`/folders/${key}`}>
-                    <Folder title={branch.name} />
+                    <Folder title={branch.name} type={branch.type}/>
                   </Link>
                 </Col>
               );
