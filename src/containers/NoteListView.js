@@ -12,7 +12,6 @@ class NoteListView extends Component {
     console.log(notes);
     return (
       <div>
-        <h1>NoteListView</h1>
         {isLoading && <p>Loading</p>}
         <Container>
           <Row>
@@ -25,9 +24,7 @@ class NoteListView extends Component {
                 // return note
                 return (
                   <Col key={key} xs="12" sm="4">
-                    <Link to={`/folders/${key}/notes/${branch.notes[0].id}`}>
-                      <Note note={branch.notes[0]} />
-                    </Link>
+                    <Note note={branch.notes[0]} />
                   </Col>
                 );
               }

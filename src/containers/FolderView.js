@@ -24,7 +24,6 @@ class FolderView extends Component {
     console.log('here');
     return (
       <div>
-        <h1>FolderView</h1>
         {isLoading && <p>Loading</p>}
         <Container>
           <Row>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { object } from 'prop-types'
 import { Link } from 'react-router-dom';
-
 import {
   Card,
   CardText,
@@ -11,17 +10,24 @@ import {
   Button
 } from 'reactstrap';
 import snakeCase from 'lodash.snakecase';
+import { withRouter } from 'react-router';
 
-export default class Note extends Component {
+class Note extends Component {
   // static propTypes = {
   //   collab: object.isRequired,
   // }
+
+  goToNoteView = () => {
+    const { note, history } = this.props;
+    const { text, source_work, source_author } = note;
+    history.push(`/folders/${snakeCase(source_work)}/notes/${note.id}`)
+  }
 
   render() {
     const { note } = this.props;
     const { text, source_work, source_author } = note;
     return (
-      <Card className="Note">
+      <Card className="Note" onClick={this.goToNoteView}>
         <CardBody>
           <CardText className="note-card-text">
             {text}
@@ -38,3 +44,5 @@ export default class Note extends Component {
     );
   }
 }
+
+export default withRouter(Note);
