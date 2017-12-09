@@ -52,7 +52,9 @@ class App extends Component {
         mapStyles={mapStyles}
           className="route-wrapper">
           <Route exact path="/" component={NoteListView} />
-
+          <Route exact path="/works" component={NoteListView} />
+          <Route exact path="/authors" component={NoteListView} />
+          <Route exact path="/labels" component={NoteListView} />
           <Route
             path="/folders/:name/notes/:id"
             render={props => <NoteView {...props} />}

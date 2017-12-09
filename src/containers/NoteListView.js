@@ -8,8 +8,8 @@ import Folder from './Folder';
 
 class NoteListView extends Component {
   render() {
-    const { isLoading, notes } = this.props;
-    console.log(notes);
+    const { isLoading, notes, match } = this.props;
+    const { path } = match;
     return (
       <div>
         {isLoading && <p>Loading</p>}
@@ -17,24 +17,28 @@ class NoteListView extends Component {
           <Row>
             {Object.keys(notes).map(key => {
               const branch = notes[key];
-              if (branch.length === 1 && branch.type === 'author') {
-                return null;
-              }
-              if (branch.length === 1 && branch.type === 'work') {
-                // return note
+              if (path === `/${branch.type}s` || path === '/') {
+                if (branch.length === 1 && branch.type === 'author' && path === '/') {
+                  return null;
+                }
+                if (branch.length === 1 && branch.type === 'work' && path === '/') {
+                  // return note
+                  return (
+                    <Col key={key} xs="12" sm="4">
+                      <Note note={branch.notes[0]} />
+                    </Col>
+                  );
+                }
                 return (
                   <Col key={key} xs="12" sm="4">
-                    <Note note={branch.notes[0]} />
+                    <Link to={`/folders/${key}`}>
+                      <Folder title={branch.name} type={branch.type} />
+                    </Link>
                   </Col>
                 );
+              } else {
+                return null;
               }
-              return (
-                <Col key={key} xs="12" sm="4">
-                  <Link to={`/folders/${key}`}>
-                    <Folder title={branch.name} type={branch.type}/>
-                  </Link>
-                </Col>
-              );
             })}
           </Row>
         </Container>
