@@ -6,6 +6,7 @@ import { spring, AnimatedSwitch } from 'react-router-transition';
 import logo from './logo.svg';
 import './App.css';
 import { NoteView, NoteListView, LoginView, FolderView } from './containers';
+import Navbar from './components/Navbar';
 import { fetchNotes } from './actions';
 
 function mapStyles(styles) {
@@ -45,7 +46,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Link to="/">Float Notes</Link>
+        <Navbar />
         <AnimatedSwitch
           {...pageTransitions}
         mapStyles={mapStyles}
