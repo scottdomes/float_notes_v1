@@ -21,12 +21,12 @@ body {
 
 .route-wrapper > div > div {
   background: linear-gradient(
-    left top,
-    right bottom,
+    to right,
     rgba(247, 251, 252, 1) 0%,
     rgba(217, 237, 242, 1) 40%,
     rgba(173, 217, 228, 1) 100%
   );
+  /*background-color: #dbeef2;*/
   margin-top: -56px;
   padding-top: 56px;
   min-height: 100vh;

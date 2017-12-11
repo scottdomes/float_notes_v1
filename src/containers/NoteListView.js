@@ -11,23 +11,27 @@ class NoteListView extends Component {
     const { isLoading, notes, match } = this.props;
     const { path } = match;
     return (
-      <div>
+      <div className="component-container NoteListView">
         {isLoading && <p>Loading</p>}
         <Container>
           <Row>
             {Object.keys(notes).map(key => {
               const branch = notes[key];
               if (path === `/${branch.type}s` || path === '/') {
-                if (branch.length === 1 && branch.type === 'author' && path === '/') {
+                if (
+                  branch.length === 1 &&
+                  branch.type === 'author' &&
+                  path === '/'
+                ) {
                   return null;
                 }
-                if (branch.length === 1 && branch.type === 'work' && path === '/') {
+                if (
+                  branch.length === 1 &&
+                  branch.type === 'work' &&
+                  path === '/'
+                ) {
                   // return note
-                  return (
-                    <Col key={key} xs="12" sm="4">
-                      <Note note={branch.notes[0]} />
-                    </Col>
-                  );
+                  return <Note key={key} note={branch.notes[0]} />;
                 }
                 return (
                   <Col key={key} xs="12" sm="4">

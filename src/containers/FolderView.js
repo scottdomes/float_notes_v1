@@ -21,18 +21,13 @@ class FolderView extends Component {
 
   render() {
     const { isLoading, notes, match } = this.props;
-    console.log('here');
     return (
-      <div>
+      <div className="component-container">
         {isLoading && <p>Loading</p>}
         <Container>
           <Row>
             {this.findNotes().map(note => {
-              return (
-                <Col key={note.id} xs="12" sm="4">
-                  <Note note={note} />
-                </Col>
-              );
+              return <Note key={note.id} note={note} />;
             })}
           </Row>
         </Container>

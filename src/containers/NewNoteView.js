@@ -7,6 +7,7 @@ export default class NewNoteView extends Component {
 
     // } = this.props
     return (
+      <div>
       <div className="container NewNoteView">
         <Form>
           <FormGroup>
@@ -27,6 +28,7 @@ export default class NewNoteView extends Component {
           </FormGroup>
           <Button>Submit</Button>
         </Form>
+      </div>
       </div>
     );
   }
