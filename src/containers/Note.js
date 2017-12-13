@@ -30,7 +30,7 @@ class Note extends Component {
     const { note } = this.props;
     const { text, source_work, source_author } = note;
     return (
-      <Col className="component-container" xs="12" sm="4" onClick={this.goToNoteView}>
+      <Col xs="12" sm="4" onClick={this.goToNoteView}>
         <Card className="Note">
           <CardBody>
             <CardText className="note-card-text">
