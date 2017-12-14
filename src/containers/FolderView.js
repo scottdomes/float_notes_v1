@@ -27,7 +27,7 @@ class FolderView extends Component {
         <Container>
           <Row>
             {this.findNotes().map(note => {
-              return <Note key={note.id} note={note} />;
+              return <Note currentFolder={match.params.name} key={note.id} note={note} />;
             })}
           </Row>
         </Container>

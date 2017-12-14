@@ -20,9 +20,9 @@ class Note extends Component {
   // }
 
   goToNoteView = () => {
-    const { note, history } = this.props;
+    const { note, history, currentFolder } = this.props;
     const { text, source_work, source_author } = note;
-    history.push(`/folders/${snakeCase(source_work)}/notes/${note.id}`);
+    history.push(`/folders/${currentFolder || snakeCase(source_work)}/notes/${note.id}`);
     scrollTo();
   };
 

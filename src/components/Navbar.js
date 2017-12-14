@@ -29,33 +29,25 @@ export default class TopNavbar extends React.Component {
     return (
       <div className="Navbar">
         <Navbar color="faded" light expand="md">
-          <Link to="/">
-            <NavbarBrand>
-              <i className="fas fa-cloud" /> Float Notes
-            </NavbarBrand>
-          </Link>
+          <NavbarBrand tag={Link} to="/">
+            <i className="fas fa-cloud" /> Float Notes
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink>
-                  <Link to="/works">
-                    <i className="fas fa-book" /> Works
-                  </Link>
+                <NavLink tag={Link} to="/works">
+                  <i className="fas fa-book" /> Works
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink>
-                  <Link to="/authors">
-                    <i className="fas fa-user" /> Authors
-                  </Link>
+                <NavLink tag={Link} to="/authors">
+                  <i className="fas fa-user" /> Authors
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink>
-                  <Link to="/labels">
-                    <i className="fas fa-bookmark" /> Labels
-                  </Link>
+                <NavLink tag={Link} to="/labels">
+                  <i className="fas fa-bookmark" /> Labels
                 </NavLink>
               </NavItem>
               <NavItem>
